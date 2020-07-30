@@ -7,8 +7,9 @@ For official Documentation, Guides, and Install Docs please visit
 
 # Installation
 Pretty straight forward as with all my scripts, For more details about Configs etc see the Docs above.
-1. Edit the `config.lua` to your liking
-2. Append `start Discord2FiveMControl` in your server.cfg
+1. Add the "Discord2FiveMControl" folder to your Server Resources
+2. Edit the `config.lua` to your liking
+3. Append `start Discord2FiveMControl` in your server.cfg
 
 # Support
 Support for this Script **WILL NOT** Be offered on the FiveM Fourms,
