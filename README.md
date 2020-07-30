@@ -3,7 +3,7 @@ Control your FiveM Server from a Discord Channel of your choice.
 
 # Documentation
 For official Documentation, Guides, and Install Docs please visit
-- 
+* http://help.toxicdev.me/docs/projects/discord2fivem-control
 
 # Installation
 Pretty straight forward as with all my scripts, For more details about Configs etc see the Docs above.
