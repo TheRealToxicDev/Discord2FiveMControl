@@ -14,37 +14,38 @@ end
 
 function DiscordRequest(method, endpoint, jsondata)
     local data = nil
-        PerformHttpRequest("https://discordapp.com/api/"..endpoint, function(errorCode, resultData, resultHeaders)
-            data = {data=resultData, code=errorCode, headers=resultHeaders}
-        end, method, #jsondata > 0 and json.encode(jsondata) or "", {["Content-Type"] = "application/json", ["Authorization"] = "Bot " .. Config.BotToken})
-
-        while data == nil do
-            Citizen.Wait(0)
-        end
-
-        return data
+    PerformHttpRequest("https://discordapp.com/api/"..endpoint, function(errorCode, resultData, resultHeaders)
+		data = {data=resultData, code=errorCode, headers=resultHeaders}
+    end, method, #jsondata > 0 and json.encode(jsondata) or "", {["Content-Type"] = "application/json", ["Authorization"] = "Bot " .. Config.BotToken})
+ 
+    while data == nil do
+        Citizen.Wait(0)
     end
-
-    Citizen.CreateThread(function()
-        while true do 
-            Citizen.Wait(600000)
-            PerformHttpRequest(Config.WebHook, function(err, text, headers) end, 'POST', json.encode({username = Config.ReplyUserName, content = "Discord Bot Heart Beat Received ", avatar_url = Config.AvatarURL}), { ['Content-Type'] = 'application/json' })
-        end
-    end)
-
-    function string.starts(String,Start)
-        return string.sub(String,1,string.len(Start))==Start
-    end
-
-    function mysplit (inputstr, sep)
+	
+    return data
+end
+ 
+Citizen.CreateThread(function()
+while true do 
+  Citizen.Wait(600000)
+  PerformHttpRequest(Config.WebHook, function(err, text, headers) end, 'POST', json.encode({username = Config.ReplyUserName, content = "Discord Bot Heart Beat Received ", avatar_url = Config.AvatarURL}), { ['Content-Type'] = 'application/json' })
+end
+end)
+ 
+ 
+function string.starts(String,Start)
+   return string.sub(String,1,string.len(Start))==Start
+end
+ 
+function mysplit (inputstr, sep)
         if sep == nil then
-            sep = "%s"
+                sep = "%s"
         end
-        local t = {}
+        local t={}
         for str in string.gmatch(inputstr, "([^"..sep.."]+)") do
-            table.insert(t, str)
-    end
-    return t
+                table.insert(t, str)
+        end
+        return t
 end
 
 function GetRealPlayerName(playerId)
