@@ -13,4 +13,4 @@ Pretty straight forward as with all my scripts, For more details about Configs e
 
 # Support
 Support for this Script **WILL NOT** Be offered on the FiveM Fourms,
-Please contact me on [Discord](https://discord.gg/MbjZ7xc) or [Twitter](https://twitter.com/TheRealToxicDev) for support.
+Please contact me on [Discord](https://discord.gg/QhmXAJdPQu) or [Twitter](https://twitter.com/TheRealToxicDev) for support.
